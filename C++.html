@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html>
+
+<head> 
+    <link rel="stylesheet" href="normalize.css">
+    
+    <link rel="stylesheet" href="css.css">
+    
+    <meta charset="utf-8">
+
+    <title> Язык C++</title>
+
+    <style>
+    
+   
+     
+    p {
+   font-size: 14px;
+   }
+    table.t2 {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Georgia;
+    }
+    .t2 th, .t2 td {
+    padding: 4px 8px;
+    border: 2px solid #fff;
+    background: #fbd7b4;
+  }
+  .t2 thead th {
+    padding: 2px 8px;
+    background: #f69546;
+    text-align: left;
+    font-weight: normal;
+    font-size: 13px;
+    color: #fff;
+  }
+  .t2 tbody tr:nth-child(odd) *:nth-child(even), .t2 tbody tr:nth-child(even) *:nth-child(odd) {
+    background: #f3eddd;
+  }
+  
+  .t2 tr *:nth-child(3), .t2 tr *:nth-child(4) {
+    text-align: right;
+  }
+  p {
+    font-family: fantasy; margin-left: 3cm; margin-right:1cm ;line-height: 1.5cm;text-align: justify; text-indent: 1.5cm;
+  }
+  li {
+    font-family: fantasy; font-size: 14px; line-height: 1.5cm;
+  }
+  table.t1 {
+    margin: 1em auto;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .t1 th, .t1 td {
+    padding: 4px 8px;
+  }
+  .t1 thead th {
+    background: #4f81bd;
+    text-transform: lowercase;
+    text-align: left;
+    font-size: 15px;
+    color: #fff;
+  }
+  .t1 tr {
+    border-right: 1px solid #95b3d7;
+  }
+  .t1 tbody tr {
+    border-bottom: 1px solid #95b3d7;
+  }
+  .t1 tbody tr:nth-child(odd) {
+    background: #dbe5f0;
+  }
+  .t1 tbody th, .t1 tbody tr:nth-child(even) td {
+    border-right: 1px solid #95b3d7;
+  }
+  .t1 tfoot th {
+    background: #4f81bd;
+    text-align: left;
+    font-weight: normal;
+    font-size: 10px;
+    color: #fff;
+  }
+  .t1 tr *:nth-child(3), .t1 tr *:nth-child(4) {
+    text-align: right;
+  }
+  .mw-highlight .cp {
+    color: #9C6500;
+}
+.mw-highlight .cpf {
+    color: #3D7B7B;
+    font-style: italic;
+}
+.mw-highlight .kt {
+    color: #B00040;
+}
+.mw-highlight .nf {
+    color: #0000FF;
+}
+.mw-highlight .k {
+    color: #008000;
+    font-weight: bold;
+}
+.mw-highlight .s {
+    color: #BA2121;
+}
+.mw-highlight .nn {
+    color: #0000FF;
+    font-weight: bold;
+}
+div {
+     direction: ltr;
+}
+</style>
+</head>
+
+<body style="background-image:url(2.png)">
+  <h1 style="text-align: center;text-transform: uppercase;"><strong>Содержание</strong></h1>
+
+  <a  href="#1"  style="margin-left:3cm;font-family: fantasy;line-height: 1.5cm"><strong>История создания</strong></a>
+  <br>
+  <a  href="#2"  style="margin-left:3cm;font-family: fantasy;line-height: 1.5cm"><strong>Краткий обзор языка</strong></a>
+  <br>
+  <a  href="#3" style="margin-left:3cm;font-family: fantasy;line-height: 1.5cm"><strong>Примеры кода</strong></a>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h1 id="1"  style="text-align: left;text-transform: uppercase;text-indent: 4.5cm;line-height: 1.5cm;"><strong>История создания </strong></h1>
+
+
+
+
+   <p> Язык возник в начале 1980-х годов, когда сотрудник фирмы Bell Labs <a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%B0%D1%83%D1%81%D1%82%D1%80%D1%83%D0%BF,_%D0%91%D1%8C%D1%91%D1%80%D0%BD">Бьёрн Страуструп</a> придумал ряд усовершенствований к языку C под собственные нужды. Когда в конце 1970-х годов Страуструп начал работать в Bell Labs над задачами теории очередей (в приложении к моделированию телефонных вызовов), он обнаружил, что попытки применения существующих в то время языков моделирования оказываются неэффективными, а применение высокоэффективных машинных языков слишком сложно из-за их ограниченной выразительности. Так, язык Симула имеет такие возможности, которые были бы очень полезны для разработки большого программного обеспечения, но работает слишком медленно, а язык BCPL достаточно быстр, но слишком близок к языкам низкого уровня и не подходит для разработки большого программного обеспечения. </p>
+
+   <figure >
+    
+    <img style="float:right;margin-left: 1cm;clear: left;box-shadow: none;resize: none;" src="1.png" width="340" 
+     height="280">
+    
+   </figure>
+   <p>Вспомнив опыт своей диссертации, Страуструп решил дополнить язык C (преемник BCPL) возможностями, имеющимися в языке Симула. Язык C, будучи базовым языком системы <a href="https://ru.wikipedia.org/wiki/Unix">UNIX</a>, на которой работали компьютеры Bell, является быстрым, многофункциональным и переносимым. Страуструп добавил к нему возможность работы с классами и объектами. В результате практические задачи моделирования оказались доступными для решения как с точки зрения времени разработки (благодаря использованию Симула-подобных классов), так и с точки зрения времени вычислений (благодаря быстродействию C). В первую очередь в C были добавлены классы (с инкапсуляцией), наследование классов, строгая проверка типов, inline-функции и аргументы по умолчанию. Ранние версии языка, первоначально именовавшегося «C with classes» («Си с классами»), стали доступны с 1980 года.</p>
+
+   <p>Разрабатывая C с классами, Страуструп написал программу <a href="https://ru.wikipedia.org/wiki/Cfront">cfront</a> — транслятор, перерабатывающий исходный код C с классами в исходный код простого C. Это позволило работать над новым языком и использовать его на практике, применяя уже имеющуюся в UNIX инфраструктуру для разработки на C. Новый язык, неожиданно для автора, приобрёл большую популярность среди коллег и вскоре Страуструп уже не мог лично поддерживать его, отвечая на тысячи вопросов.</p>
+    <table style="margin-left: 3cm;width: 89%;" class="t2" >
+    
+       <thead>
+       <tr>
+        <th style="text-align: center">Исторический этап развития</th>
+        <th style="text-align: center">Год</th>
+        
+       </tr>
+       </thead>
+      <tbody>
+      <tr><th>Язык BCPL</th><td>1966</td></tr>
+      <tr><th>Язык Би (оригинальная разработка <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BC%D0%BF%D1%81%D0%BE%D0%BD,_%D0%9A%D0%B5%D0%BD">Томпсона</a> под UNIX)</th><td>1969</td></tr>
+      <tr><th>Язык Си</th><td>1972</td></tr>
+      <tr><th>Си с классами</th><td>1980</td></tr>
+      <tr><th>C84</th><td>1984</td></tr>
+      <tr><th>Cfront (выпуск E)</th><td>1984</td></tr>
+      <tr><th>Cfront (выпуск 1.0)</th><td>1985</td></tr>
+      <tr><th>Множественное/виртуальное наследование</th><td>1988</td></tr>
+      <tr><th>Обобщённое программирование (шаблоны)</th><td>1991</td></tr>
+      <tr><th>ANSI C++ / ISO-C++</th><td>1996</td></tr>
+      <tr><th>ISO/IEC 14882:1998</th><td>1998</td></tr>
+      <tr><th>ISO/IEC 14882:2003</th><td>2003</td></tr>
+      <tr><th><a href="https://ru.wikipedia.org/wiki/C%2B%2B/CLI">C++/CLI</a></th><td>2005</td></tr>
+      <tr><th><a href="https://ru.wikipedia.org/wiki/C%2B%2B_Technical_Report_1">TR1</a></th><td>2005</td></tr>
+      <tr><th>C++11</th><td>2011</td></tr>
+      <tr><th>C++14</th><td>2014</td></tr>
+      <tr><th>C++17</th><td>2017</td></tr>
+      <tr><th>C++20</th><td>2020</td></tr>
+      </tbody>
+     </table>
+  <p>К 1983 году в язык были добавлены новые возможности, такие как виртуальные функции, перегрузка функций и операторов, ссылки, константы, пользовательский контроль над управлением свободной памятью, улучшенная проверка типов и новый стиль комментариев (//). Получившийся язык уже перестал быть просто дополненной версией классического C и был переименован из <i>C с классами</i> в «C++». Его первый коммерческий выпуск состоялся в октябре 1985 года.</p>
+   
+     <figure>
+     <p style="text-align: center;"><img style="float:none" src="5.jpg" width="340" height="280"></p>
+     </figure>
+  
+  <p>До начала официальной стандартизации язык развивался в основном силами Страуструпа в ответ на запросы программистского сообщества. Функцию стандартных описаний языка выполняли написанные Страуструпом печатные работы по C++ (описание языка, справочное руководство и так далее). Лишь в 1998 году был ратифицирован международный стандарт языка C++: ISO/IEC 14882:1998 «Standard for the C++ Programming Language»; после принятия технических исправлений к стандарту в 2003 году — следующая версия этого стандарта — ISO/IEC 14882:2003.</p>
+
+     <h1 id="2"  style="text-align: left;text-transform: uppercase;text-indent: 4.5cm;"><strong>Краткий обзор языка</strong></h1>
+
+     <p>Стандарт C++ состоит из двух основных частей: описание ядра языка и описание стандартной библиотеки.</p>
+
+     <p>Первое время язык развивался вне формальных рамок, спонтанно, по мере встававших перед ним задач. Развитию языка сопутствовало развитие кросс-компилятора cfront. Новшества в языке отражались в изменении номера версии кросс-компилятора. Эти номера версий кросс-компилятора распространялись и на сам язык, но применительно к настоящему времени речь о версиях языка C++ не ведут. Лишь в 1998 году язык стал стандартизированным.</p>
+       <ul style="margin-left: 3.7cm; margin-right:1cm ;line-height:1.5cm;text-align: justify;">
+    
+       <li>C++ поддерживает как комментарии в стиле C (/* комментарий */), так и однострочные (// вся оставшаяся часть строки является комментарием), где // обозначает начало комментария, а ближайший последующий символ новой строки, который не предварён символом \ (либо эквивалентным ему обозначением ??/), считается окончанием комментария. Плюс этого комментария в том, что его не обязательно заканчивать, то есть обозначать окончание комментария.</li>
+    
+       <li>Спецификатор inline для функций. Функция, определённая внутри тела класса, является inline по умолчанию. Данный спецификатор является подсказкой компилятору и может встроить тело функции в код вместо её непосредственного вызова.</li>
+
+        <li>Квалификаторы const и volatile. В отличие от С, где const обозначает только доступ на чтение, в C++ переменная с квалификатором const должна быть инициализирована. volatile используется в описании переменных и информирует компилятор, что значение данной переменной может быть изменено способом, который компилятор не в состоянии отследить. Для переменных, объявленных volatile, компилятор не должен применять средства оптимизации, изменяющие положение переменной в памяти (например, помещающие её в регистр) или полагающиеся на неизменность значения переменной в промежутке между двумя присваиваниями ей значения.</li>
+    
+        <li><a style="line-height: 0%;;"href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE_%D0%B8%D0%BC%D1%91%D0%BD_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)#C++">Пространства имён</a> (namespace). Пример:</li>
+      </ul>
+     <p>namespace Foo </p>   
+     <p>{</p> 
+     <p>const int x = 5; </p>    
+     <p>}</p>  
+     <p>const int y = Foo::x;</p> 
+   <h2 style="text-align: left;text-indent: 4.5cm;">Типы</h2>
+      <ol style="margin-left:3.7cm; margin-right:1cm ;line-height: 1.5cm;text-align: justify;">
+
+         <li>Символьные: char, wchar_t (char16_t и char32_t, в стандарте C++11);</li>
+        
+         <li>Целочисленные знаковые: signed char, short int, int, long int (и long long, в стандарте C++11);</li>
+    
+         <li>Целочисленные беззнаковые: unsigned char, unsigned short int, unsigned int, unsigned long int (и unsigned long long, в стандарте C++11);</li>
+         
+         <li>С плавающей точкой: float, double, long double;</li>
+         
+         <li>Логический: bool, имеющий значения либо true, либо false.</li>
+     </ol>
+   
+     <p>В стандарте C++ под классом (class) подразумевается пользовательский тип, объявленный с использованием одного из ключевых слов class, struct или union, под структурой (structure) подразумевается класс, определённый через ключевое слово struct, и под объединением (union) подразумевается класс, определённый через ключевое слово union. В зависимости от использованного ключевого слова меняются также и некоторые свойства самого класса. Например, в классе, объявленным через struct, члены без вручную прописанного модификатора доступа будут по умолчанию иметь публичный уровень доступа, а не приватный.</p>
+     <p>В теле определения класса можно указать как объявления функций, так и их определение. В последнем случае функция является встраиваемой (inline). Нестатические функции-члены могут иметь квалификаторы const и volatile, а также ссылочный квалификатор (& или &&).</p>
+     
+    <h2 style="text-align: left;text-indent: 4.5cm;"><a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)">Наследование</a></h2>
+     <p>C++ поддерживает <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%BD%D0%BE%D0%B6%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BD%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">множественное наследование.</a> Базовые классы (классы-предки) указываются в заголовке описания класса, возможно, со спецификаторами доступа. Наследование от каждого класса может быть публичным, защищённым или закрытым:</p>
+     <table style="margin-left: 3cm;width: 89%;" class="t1" >
+    
+      <thead>
+        <tr>
+          <th style="text-align: center">Доступ члена базового класса/режим наследования</th>
+          <th style="text-align: center">private-член</th>
+          <th style="text-align: center">protected-член</th>
+          <th style="text-align: center">public-член</th>
+
+          
+         </tr>
+       </thead>
+      <tbody>
+      <tr><th>private-наследование</th><td>недоступен</td><td>private</td><td>private</td></tr>
+     <tr><th>protected-наследование</th><td>недоступен</td><td>protected</td><td>protected</td></tr>
+     <tr><th>public-наследование</th><td>недоступен</td><td>protected</td><td>public</td></tr>
+      </tbody>
+     </table>
+     <p>По умолчанию базовый класс наследуется как private.</p>
+     <p>В результате наследования класс-потомок получает все поля классов-предков и все их методы; можно сказать, что каждый экземпляр класса-потомка содержит <i>подэкземпляр</i> каждого из классов-предков. Если один класс-предок наследуется несколько раз (это возможно, если он является предком нескольких базовых классов создаваемого класса), то экземпляры класса-потомка будет включать столько же подэкземпляров данного класса-предка. Чтобы избежать такого эффекта, если он нежелателен, C++ поддерживает концепцию <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D0%BD%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"><i>виртуального наследования.</i></a> При наследовании базовый класс может объявляться виртуальным; на все виртуальные вхождения класса-предка в дерево наследования класса-потомка в потомке создаётся только один подэкземпляр.</p>
+    <h2 style="text-align: left;text-indent: 4.5cm;">Друзья</h2>
+     <p><i>Функции-друзья</i> — это функции, не являющиеся функциями-членами и тем не менее имеющие доступ к защищённым и закрытым членам класса. Они должны быть объявлены в теле класса как friend.</p>
+     <p>Дружественным может быть объявлен как весь класс, так и функция-член класса. Четыре важных ограничения, накладываемых на отношения дружественности в C++:</p>
+     <ul style="margin-left: 3.7cm; margin-right:1cm ;line-height:1.5cm;text-align: justify;list-style-image: url(3.png)">
+     <li><strong>Дружественность не транзитивна.</strong> Если A объявляет другом B, а B, в свою очередь, объявляет другом C, то C не становится автоматически другом для A. Для этого A должен явно объявить C своим другом.</li>
+     <li><strong>Дружественность не взаимна.</strong> Если класс A объявляет другом класс B, то он не становится автоматически другом для B. Для этого должно существовать явное объявление дружественности A в классе B.</li>
+     <li><strong>Дружественность не наследуется.</strong> Если A объявляет класс B своим другом, то потомки B не становятся автоматически друзьями A. Для этого каждый из них должен быть объявлен другом A в явной форме.</li>
+     <li><strong>Дружественность не распространяется на потомков.</strong> Если класс A объявляет B другом, то B не становится автоматически другом для классов-потомков A. Каждый потомок, если это нужно, должен объявить B своим другом самостоятельно.</li>
+     </ul>
+    <h2 style="text-align: left;text-indent: 4.5cm;">Общая структура</h2>
+     
+     
+     <p>Стандартная библиотека C++ включает в себя набор средств, которые должны быть доступны для любой реализации языка, чтобы обеспечить программистам удобное пользование языковыми средствами и создать базу для разработки как прикладных приложений самого широкого спектра, так и специализированных библиотек.</p>
+     <figure >
+    
+      <img style="float:left;margin-left: 3.3cm;margin-right: 1cm" src="4.jpg" width="540" height="440">
+      
+     </figure>
+     <p>Доступ к возможностям стандартной библиотеки C++ обеспечивается с помощью включения в программу (посредством директивы #include) соответствующих стандартных заголовочных файлов. Всего в стандарте C++11 определено 79 таких файлов. Средства стандартной библиотеки объявляются как входящие в пространство имён std. Заголовочные файлы, имена которых соответствуют шаблону «cX», где X — имя заголовочного файла стандартной библиотеки C без расширения (cstdlib, cstring, cstdio и пр.), содержат объявления, соответствующие данной части стандартной библиотеки C. Стандартные функции библиотеки C также находятся в пространстве имён std.</p>
+  <h1 id="3"  style="text-align: left;text-transform: uppercase;text-indent: 4.5cm;">Примеры кода</h1>
+   <p>Пример 1</p>
+   <p>В этом примере для простоты импортируются все имена из пространства имён std. В настоящей же программе так делать не рекомендуется, так как можно столкнуться с коллизией имён. Язык позволяет импортировать отдельные объекты:</p>
+   <div style="margin-left: 3cm;"class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+
+    <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">;</span>
+    <span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">my_vector</span><span class="p">;</span>
+    <span class="p">}</span>
+    </pre></div>
+    <p>Пример 2</p>
+    <p>Это пример программы Hello, world!, которая выводит сообщение в консоль, используя стандартную библиотеку, и завершается.</p>
+    <div style="margin-left: 3cm;letter-spacing: normal;word-wrap: break-word;" class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+      <span class="c1">// Импортируем все объявления в пространстве имён "std" в глобальное пространство имён.</span>
+      <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+      
+      <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+      <span class="p">{</span>
+      <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Hello, world!"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+      <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+      </pre></div>
+   
+    <h2 style="text-align: left;text-indent: 4.5cm;">Список использованных тегов и свойств</h2>
+      <p>Теги:html,DOCTYPE,title,head,body,strong,i,span,table,th,tr,td,p,h1,h2,img,link,div,figure,figcaption,ul,li,ol,tbody,thead,br,a,style,meta charset,pre,style и т.д.</p>
+      <p>CSS-свойства:margin-left,margin-right,text-transform,text-align,text-indent,float,line-height,list-style-image,width,height,font-family,font-size,background-image,color,font-weight,padding,border,backgroung,border-collapse,margin,display,box-sizing,overflow,border-bottom,text-decortaion,position,vertical-align,bottom,top,border-style,white-space,font,-webkit-appearance,outline-offset,clear,box-shadow,resize,direction,letter-spacing,word-wrap.</p>
+
+
+
+
+  </body>
+
+
+
+</html>
