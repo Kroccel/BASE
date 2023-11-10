@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Форма для соискателя вакансии разработчика C++</title>
+    <style>
+        body{
+            background-color: #51cced;
+        }
+        form 
+        {   
+            
+            box-shadow: 0 5px 45px rgba(0,0,0,0.2);
+            margin-left: 4cm;
+            margin-right: 4cm;
+            
+            
+        }
+        label
+        {   
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 900;
+            padding-left: 1cm;
+            padding-right: 0.5cm;
+            
+        }
+        input {
+            border: 2px solid;
+            background: transparent;
+            outline:none;
+            
+        }
+       div {
+        
+        display: flex; 
+        justify-content: center;
+       }
+       .NSP {
+        padding-top:1cm;
+        background-color: white;
+       }
+       .agemail {
+        background-color: whitesmoke;
+       }
+       .skills 
+       {
+        background-color: whitesmoke;
+       }
+       .level 
+       {
+        background-color: whitesmoke;
+       }
+        .text 
+        {
+            background-color: whitesmoke;
+        }
+        .button 
+        {
+            background-color:whitesmoke;
+        }
+        @media (max-width:1305px)
+        {
+            form {
+                max-width: 350px;
+                height: 880px;
+                
+                
+                
+                
+            }
+            .button 
+            {
+                padding-right: 0.5cm;
+                
+            }
+            .text {
+                padding-left: 1cm;
+                padding-right: 0.5cm;
+            }
+            .level {
+                text-align: justify;
+            }
+            .skills {
+                text-align: justify;
+                
+            }
+            .NSP 
+            {
+                flex-direction: column;
+                
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center"><strong>Форма для разработчика C++</strong></h1>
+    <div class="container">
+        <form action="" method="">
+            <div class="NSP">
+                <label>Имя
+                    <input type="text" required>
+                </label>
+                <br>
+                <label>Фамилия
+                    <input type="text" required>
+                </label>
+                <br>
+                <label>Отчество
+                    <input type="text">
+                </label>
+            </div>
+            <div class="agemail" style="padding-top: 2cm;">
+                <label>Ваш возраст
+                    <input type="number" min="18" max="45" required>
+                </label>
+
+                <label>Введите e-mail для связи
+                    <input type="email" required>
+                </label>
+            </div>
+            <div class="skills" style="padding-top:2cm">
+                <fieldset style="border: none">
+                    <legend style="text-align: center;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;padding-bottom: 0.5cm">Выберите языки, которыми вы владеете</legend>
+                    <label>
+                        <input type="checkbox" name="english">Английский
+                    </label>
+                    <label>
+                        <input type="checkbox" name="chinese">Китайский 
+                    </label>
+                    <label>
+                        <input type="checkbox" name="corean">Корейский
+                    </label>
+                    <label>
+                        <input type="checkbox" name="spanish">Испанский
+                    </label>
+                    <label>
+                        <input type="checkbox" name="french">Французский
+                    </label>
+                    
+
+                </fieldset>
+            </div>
+            <div class="level" style="padding-top:2cm">
+                <fieldset style="border: none;">
+                    <legend style="text-align: center;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;padding-bottom: 0.5cm">Оцените ваш уровень знания C++</legend>
+                    <label>
+                        <input type="radio" name="lvl" value="1">1
+                    </label>
+                    <label>
+                        <input type="radio" name="lvl" value="2">2
+                    </label>
+                    <label>
+                        <input type="radio" name="lvl" value="3">3
+                    </label>
+                    <label>
+                        <input type="radio" name="lvl" value="4">4
+                    </label>
+                    <label>
+                        <input type="radio" name="lvl" value="5">5
+                    </label>
+                    <label>
+                        <input type="radio" name="lvl" value="6">6
+                    </label>
+                    <label>
+                        <input type="radio" name="lvl" value="7">7
+                    </label>
+                    <label>
+                        <input type="radio" name="lvl" value="8">8
+                    </label>
+                    <label>
+                        <input type="radio" name="lvl" value="9">9
+                    </label>
+                    <label>
+                        <input type="radio" name="lvl" value="10">10
+                    </label>
+                </fieldset>
+            </div>
+            <div class="text" style="padding-top:1.5cm">
+                <textarea name="info" cols="50" rows="5" style="border: gold solid 1rem;" required placeholder="Личностные качества/опыт работы/достижения"></textarea>
+            </div>
+            <div class="button" style="padding-top:1cm;justify-content: left;padding-left: 1cm;padding-bottom: 1cm;">
+                <button type="submit">Отправить на рассмотрение</button>
+                <button type="reset" style="margin-left: 1cm;">Очистить форму</button>
+            </div>
+        </form>
+    </div>   
+</body>
+
+</html>
