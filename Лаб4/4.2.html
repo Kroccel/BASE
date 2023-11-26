@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+<link rel="stylesheet" href="normalize.css">
+<style>
+    * {
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    .oclock {
+        background: white;
+        border: 0.3875em solid #0F1C3F;
+        border-radius: 50%;
+        height: 240px;
+        width: 240px;
+        position:absolute;
+        margin:auto;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+    }
+    
+    .oclock .up {
+        position: absolute;
+        width:3px;
+        height:8px;
+        background-color: darkblue;
+        left:0;
+        right:0;
+        margin:auto;
+        
+    }
+    .oclock .down {
+        position: absolute;
+        width:3px;
+        height:8px;
+        background-color: darkblue;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+    }
+    .oclock .right {
+        position: absolute;
+        width:8px;
+        height:3px;
+        background-color: darkblue;
+        top:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+    }
+    .oclock .left {
+        position: absolute;
+        width:8px;
+        height:3px;
+        background-color: darkblue;
+        top:0;
+        left:0;
+        bottom:0;
+        margin:auto;
+    }
+    .oclock .center {
+        position: absolute;
+        width:6px;
+        height:6px;
+        border-radius: 100%;
+        background-color: darkblue;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        margin:auto;
+    }
+    .oclock .a {
+        position: absolute;
+        width:1px;
+        top:10px;
+        left:0;
+        right:14px;
+        margin:auto;
+    }
+    .oclock .b {
+        position: absolute;
+        height:1px;
+        top:0;
+        right:10px;
+        bottom:14px;
+        margin:auto;
+    }
+    .oclock .c {
+        position: absolute;
+        width:1px;
+        left:0;
+        right:7px;
+        bottom:10px;
+        margin:auto;
+    }
+    .oclock .d {
+        position: absolute;
+        height:1px;
+        top:0;
+        left:10px;
+        bottom:14px;
+        margin:auto;
+    }
+    .oclock .hour {
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        margin: 0 auto;
+        left: 0;
+        right:0;
+        
+    }
+    .oclock .hour:before{
+        content:"";
+        background-color: darkblue;
+        height:60px;
+        width:3px;
+        position: absolute;
+        top:53px;
+        animation: time 60s infinite linear;
+        transform-origin: bottom;
+    }
+    .oclock .second {
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        margin: 0 auto;
+        left: 0;
+        right:0;
+        
+    }
+    .oclock .second:before{
+        content:"";
+        background-color: red;
+        height:80px;
+        width:2px;
+        position: absolute;
+        top:34px;
+        animation: time 10s infinite linear ;
+        transform-origin: bottom;
+
+    }
+    .oclock .minute {
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        margin: 0 auto;
+        left: 0;
+        right:0;
+        
+        
+    }
+    .oclock .minute:before{
+        content:"";
+        background-color: green;
+        height:70px;
+        width:1px;
+        position: absolute;
+        top:43px;
+        transform-origin: bottom;
+        animation: time 25s infinite linear;
+    }
+    @keyframes time {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+   
+</style>
+
+</head>
+
+<body style="background-color: blueviolet;height: 100%">
+    
+    <div class="oclock">
+        <div class="up"></div>
+        <div class="down"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+        <div class="hour"></div>
+        <div class="center"></div>
+        <div class="a"><strong>12</strong></div>
+        <div class="b"><strong>3</strong></div>
+        <div class="c"><strong>6</strong></div>
+        <div class="d"><strong>9</strong></div>
+    </div>
+    
+</body>
+
+</html>

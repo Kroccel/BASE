@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+<link rel="stylesheet" href="normalize.css">
+<style>
+    .spaceship {
+        display:flex;
+        justify-content: center;
+        height: 90vh;
+        align-items: end;
+        border: 1px solid;
+        width: 1150px;
+        margin-left:3cm;
+        background-color: pink;
+        padding-bottom: 100px;
+    }
+    .start {
+        display: flex;
+        width:250px;
+        height:400px;
+        background-color: gray;
+        border: 2px solid;
+    
+    }
+    .right {
+        border: 50px solid transparent; border-bottom: 50px solid red; border-left: 50px solid red;
+    }
+    .left {
+        border: 50px solid transparent; border-right: 50px solid red; border-bottom: 50px solid red; 
+    }
+    .roof {
+        border: 125px solid transparent; border-bottom: 125px solid blue; position: absolute; bottom: 469px;
+    }
+    .window {
+        background: aqua;
+        border: 0.3875em solid #0F1C3F;
+        border-radius: 50%;
+        height: 5em;
+        width: 5em;
+        position:absolute;
+        bottom:320px;
+        
+    }
+    .window2 {
+        background: aqua;
+        border: 0.3875em solid #0F1C3F;
+        border-radius: 50%;
+        height: 5em;
+        width: 5em;
+        position:absolute;
+        bottom:150px;
+        
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="spaceship">
+        <div class="window"></div>
+        <div class="window2"></div>
+        <div class="roof"></div>
+        <div class="left"></div>
+        <div class="start"></div>
+        <div class="right"></div>
+
+    </div>
+</body>
+
+</html>
