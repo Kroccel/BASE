@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div {
+                display: flex;
+                height:100vh;
+                justify-content: center;
+                align-items: center;
+            }
+            .credit {
+                box-shadow:  0 0 15px blue;
+            }
+
+            .limite { 
+                box-shadow: 0 0 15px blue;
+                
+            }
+            label
+            {   
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-weight: 900;
+                padding-left: 1cm;
+                padding-right: 0.5cm;
+                
+            }
+            input {
+                background: transparent;
+                outline:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <label>Введите ссуду<input type="text" class="credit"></input></label>
+
+            <label>Введите контрольное число<input type="text" class="limite"></input></label>
+            <button>Рассчитать</button>
+        </div>
+        <script src="1.js"></script>
+    </body>
+</html>
