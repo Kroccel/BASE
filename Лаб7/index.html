@@ -30,11 +30,15 @@
                 <td><button onclick="appendNumber(9)">9</button></td>
                 <td><button onclick="calculateResult()">=</button></td>
                 <td><button onclick="appendOperator('.')">.</button></td>
+                <td><button onclick="calculateResult(appendOperator('**(1/2)'))">√</button></td>
             </tr>
             <tr>
-                <td colspan="2"><button onclick="appendNumber(0)">0</button></td>
+                <td colspan="1"><button onclick="appendNumber(0)">0</button></td>
                 <td><button onclick="appendOperator('(')">(</button></td>
                 <td><button onclick="appendOperator(')')">)</button></td>
+                <td><button onclick="calculateResult(appendOperator('/100'))">%</button></td>
+                <td><button onclick="calculateResult(appendOperator('**(-1)'))">1/x</button></td>
+                <td><button onclick="calculateResult(appendOperator('*(-1)'))">+/-</button></td>
             </tr>
         </table>
     </div>
