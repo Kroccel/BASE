@@ -190,3 +190,118 @@
 </body>
 
 </html>
+
+
+<?php
+$pdo =new PDO('mysql:host=localhost;port=3306;dbname=books','root','');
+$stmt = $pdo->prepare('SELECT * FROM users');
+$stmt->execute();
+$stmt->closeCursor();
+$stmt = null;
+$pdo = null;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['register'])) {
+      $login = $_POST['login'];
+      $password = $_POST['password'];
+      $email = $_POST['email'];
+
+      // Проверка, существует ли пользователь с таким же логином или email
+      $checkUserQuery = "SELECT * FROM users WHERE login='$login' OR email='$email'";
+      
+      if ($checkUserResult->num_rows > 0) {
+          echo "Такой пользователь уже существует";
+      } else {
+          // Вставка данных в базу данных
+          $insertQuery = "INSERT INTO users (login, password, mail) VALUES ('$login', '$password', '$email')";
+          if ($conn->query($insertQuery) === TRUE) {
+              echo '<script>alert("Регистрация прошла успешно");</script>';
+          } else {
+              echo "Ошибка при регистрации: " . $conn->error;
+          }
+      }
+  } elseif (isset($_POST['login'])) {
+      // Код для обработки данных из формы входа
+  }
+}
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Форма регистрации</title>
+  <style>
+    body {
+      background-image: url("photo_2022-07-05_13-05-37.jpg");
+      background-size: cover;
+      display:flex;
+    }
+
+    .registration-form {
+      margin: 100px auto;
+      width: 260px;
+      padding: 20px;
+      border:1px solid black;
+      border-radius:10%;
+      color:aqua;
+    }
+    @media (max-width:650px)
+        {
+        .registration-form {
+            max-width: 200px;
+            
+        }
+    }
+    
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="registration-form">
+    <?php if (!isset($_POST['loginForm'])) { ?>
+      <form method="POST" action="">
+        <input type="text" name="login" placeholder="Логин" required><br><br>
+        <input type="password" name="password" placeholder="Пароль" required><br><br>
+        <input type="email" name="email" placeholder="Email" required><br><br>
+        <input type="submit" name="register" value="Зарегистрироваться"><br><br>
+        <p>Уже зарегистрированы? <a href="#" onclick="showLoginForm()">Войти</a></p>
+      </form>
+    <?php } elseif (isset($_POST['loginForm'])) { ?>
+      <form method="POST" action="">
+        <input type="text" name="login" placeholder="Логин" required><br><br>
+        <input type="password" name="password" placeholder="Пароль" required><br><br>
+        <input type="submit" name="submit" value="Войти"><br><br>
+        <p>Нет аккаунта? <a href="#" onclick="showRegistrationForm()">Зарегистрироваться</a></p>
+      </form>
+    <?php } ?>
+  </div>
+
+  <script>
+    function showLoginForm() {
+      var registrationForm = document.querySelector(".registration-form");
+      registrationForm.innerHTML = `
+        <form method="POST" action="">
+          <input type="text" name="login" placeholder="Логин" required><br><br>
+          <input type="password" name="password" placeholder="Пароль" required><br><br>
+          <input type="submit" name="submit" value="Войти"><br><br>
+          <p>Нет аккаунта? <a href="#" onclick="showRegistrationForm()">Зарегистрироваться</a></p>
+        </form>
+      `;
+    }
+    function showRegistrationForm() {
+      var registrationForm = document.querySelector(".registration-form");
+      registrationForm.innerHTML = `
+        <form method="POST" action="">
+          <input type="text" name="login" placeholder="Логин" required><br><br>
+          <input type="password" name="password" placeholder="Пароль" required><br><br>
+          <input type="mail" name="email" placeholder="Email" required><br><br>
+          <input type="submit" name="submit" value="Зарегистрироваться"><br><br>
+          <p>Уже зарегистрированы? <a href="#" onclick="showLoginForm()">Войти</a></p>
+        </form>
+      `;
+    }
+  </script>
+</body>
+</html>
