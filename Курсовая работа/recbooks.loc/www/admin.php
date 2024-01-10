@@ -57,6 +57,9 @@ if (!$_SESSION['authorized']) {
 }
 $sql = "SELECT id, login, password, email FROM users";
 $result = $conn->query($sql);
+if ($_SESSION['username']!="Kroccel") {
+  header('Location: index.php');
+  exit; }
 echo "<table>";
 echo "<tr><th>ID</th><th>Login</th><th>Password</th><th>Email</th></tr>";
 if ($result->num_rows > 0) {
