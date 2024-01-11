@@ -65,7 +65,6 @@ $conn->close();
       background-attachment: fixed;
       background-position: center center;
     }
-
     .registration-form {
       margin: 100px auto;
       width: 260px;
@@ -81,13 +80,9 @@ $conn->close();
     @media (max-width:650px)
         {
         .registration-form {
-            max-width: 200px;
-            
-        }
-        
+            max-width: 200px;      
+        }  
     }
-    
-
     .hidden {
       display: none;
     }
